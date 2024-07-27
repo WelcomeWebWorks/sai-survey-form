@@ -10,11 +10,10 @@
         .container {
             max-width: 800px;
             margin-top: 0px;
-            background: gold; /* Gradient from light pink to dark purple */
+            background: gold; /* Gold color background */
             padding: 20px;
             border-radius: 10px;
         }
-
 
         .form-container {
             background-color: #FAF9F6; /* Light background color for the form */
@@ -43,6 +42,19 @@
             right: 20px;
             z-index: 1050;
         }
+
+        .btn-watch {
+            font-size: 0.8rem; /* Decrease font size */
+            padding: 5px 10px; /* Decrease padding */
+            position: absolute;
+            right: 25px;
+            top: 90px;
+        }
+
+        .form-wrapper {
+            position: relative;
+            padding-top: 60px; /* Add padding to prevent overlap with button */
+        }
     </style>
 </head>
 <body>
@@ -50,51 +62,55 @@
         <div class="form-container">
             <h1 id="heading" class="text-center">Hi Pasupuleti!</h1>
 
-            <!-- Form Begin -->
-            <form class="row g-3 needs-validation" id="FORM_ID" method="POST" action="https://script.google.com/macros/s/AKfycbzCC4U4MGIjWS5wnIrHXcjPrAai3R34FEGGsjyLEUhpVVIZoTGX5Pu6k06l7r5lOIzt/exec" novalidate>
-                <!-- NAME -->
-                <div class="col-12">
-                    <label for="name" class="form-label"><b>Name</b></label>
-                    <input name="name" type="text" class="form-control" id="name" placeholder="Please Enter Your Name" required>
-                </div>
+            <!-- Button to Watch Saved Records -->
+            <button type="button" class="btn btn-info btn-watch" onclick="redirectToURL()">Click Here! to Watch Saved Records</button>
 
-                <!-- PLACE -->
-                <div class="col-12">
-                    <label for="place" class="form-label"><b>Place</b></label>
-                    <input name="place" type="text" class="form-control" id="place" placeholder="Please Enter Your Location" required>
-                </div>
+            <div class="form-wrapper">
+                <!-- Form Begin -->
+                <form class="row g-3 needs-validation" id="FORM_ID" method="POST" action="https://script.google.com/macros/s/AKfycbzCC4U4MGIjWS5wnIrHXcjPrAai3R34FEGGsjyLEUhpVVIZoTGX5Pu6k06l7r5lOIzt/exec" novalidate>
+                    <!-- NAME -->
+                    <div class="col-12">
+                        <label for="name" class="form-label"><b>Name</b></label>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Please Enter Your Name" required>
+                    </div>
 
-                <!-- CONTACT NUMBER -->
-                <div class="col-12">
-                    <label for="contact_number" class="form-label"><b>Contact Number</b></label>
-                    <input name="contact_number" type="text" class="form-control" id="contact_number" placeholder="Please Enter Your Contact Number">
-                </div>
+                    <!-- PLACE -->
+                    <div class="col-12">
+                        <label for="place" class="form-label"><b>Place</b></label>
+                        <input name="place" type="text" class="form-control" id="place" placeholder="Please Enter Your Location" required>
+                    </div>
 
-                <!-- QUESTION 1 -->
-                <div class="col-12">
-                    <label for="question1" class="form-label"><b>Question 1</b></label>
-                    <textarea name="question1" id="question1" class="form-control form-textarea" placeholder="Please enter your answer to question 1" required></textarea>
-                </div>
+                    <!-- CONTACT NUMBER -->
+                    <div class="col-12">
+                        <label for="contact_number" class="form-label"><b>Contact Number</b></label>
+                        <input name="contact_number" type="text" class="form-control" id="contact_number" placeholder="Please Enter Your Contact Number">
+                    </div>
 
-                <!-- QUESTION 2 -->
-                <div class="col-12">
-                    <label for="question2" class="form-label"><b>Question 2</b></label>
-                    <textarea name="question2" id="question2" class="form-control form-textarea" placeholder="Please enter your answer to question 2" required></textarea>
-                </div>
+                    <!-- QUESTION 1 -->
+                    <div class="col-12">
+                        <label for="question1" class="form-label"><b>Question 1</b></label>
+                        <textarea name="question1" id="question1" class="form-control form-textarea" placeholder="Please enter your answer to question 1" required></textarea>
+                    </div>
 
-                <!-- QUESTION 3 -->
-                <div class="col-12">
-                    <label for="question3" class="form-label"><b>Question 3</b></label>
-                    <textarea name="question3" id="question3" class="form-control form-textarea" placeholder="Please enter your answer to question 3" required></textarea>
-                </div>
+                    <!-- QUESTION 2 -->
+                    <div class="col-12">
+                        <label for="question2" class="form-label"><b>Question 2</b></label>
+                        <textarea name="question2" id="question2" class="form-control form-textarea" placeholder="Please enter your answer to question 2" required></textarea>
+                    </div>
 
-                <!-- SUBMIT BUTTON -->
-                <div class="col-12 text-center">
-                    <button class="btn btn-warning" type="submit">Submit</button>
-                </div>
-            </form>
-            <!-- Form End -->
+                    <!-- QUESTION 3 -->
+                    <div class="col-12">
+                        <label for="question3" class="form-label"><b>Question 3</b></label>
+                        <textarea name="question3" id="question3" class="form-control form-textarea" placeholder="Please enter your answer to question 3" required></textarea>
+                    </div>
 
+                    <!-- SUBMIT BUTTON -->
+                    <div class="col-12 text-center">
+                        <button class="btn btn-warning" type="submit">Submit</button>
+                    </div>
+                </form>
+                <!-- Form End -->
+            </div>
         </div>
     </div>
 
@@ -116,7 +132,11 @@
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
     </div>
-
+    <script>
+        function redirectToURL() {
+            window.location.href = "https://script.google.com/macros/s/AKfycbxoRDDNXawdfFtgPWHCoHo5n56TbawJ2oMymSzDVzrPVl1_725GgAUmdf__Cx6floHmiQ/exec";
+        }
+    </script>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
